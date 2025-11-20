@@ -1,8 +1,5 @@
 package org.example;
-import java.util.HashMap;
-import java.util.InputMismatchException;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,10 +13,25 @@ public class Main {
         // - correo
         // - contraseña
 
+        ArrayList<HashMap<String,Object>>prendas = new ArrayList<>();
+
+        HashMap<String,Object> prendas1 = new HashMap();
+
+        prendas1.put("nombre","saco");
+        prendas1.put("talla","M");
+        prendas1.put("precio",1000);
+        prendas.add(prendas1);
+
+
+
         System.out.print("Ingrese su nombre de usuario: ");
         String nombreUsuario = keyEntry.nextLine();
+        System.out.print("ingrese su contraseña de usuario");
+        String contraseña = keyEntry.nextLine();
+        System.out.print("Ingrese su email: ");
+        String email = keyEntry.nextLine();
+        System.out.print(prendas);
         System.out.println("Su nombre es: " + nombreUsuario);
-
         System.out.println("\n******************");
         System.out.println("***** APP *****");
         System.out.println("******************");
@@ -27,7 +39,7 @@ public class Main {
         do {
             try {
                 System.out.println("👕 Bienvenido a gestor de prendas...\n¿Qué quieres realizar?\n");
-                System.out.println("colorverde" + "1) Guardar una prenda en BD 📝");
+                System.out.println("1) Guardar una prenda en BD 📝");
                 System.out.println("2) Mostrar el inventario de prendas 📦");
                 System.out.println("3) SALIR ❌\n");
 
@@ -55,6 +67,7 @@ public class Main {
                     System.out.println("coloramarillo" + "📋 Inventario (demo):");
                     System.out.println("- Camiseta | M | $45000");
                     System.out.println("- Jean     | L | $120000");
+                    System.out.println(prendas);
 
                 } else if (menudeopcion == 3) {
                     System.out.println("colorgris" + "Saliendo del programa... Hasta luego!");
